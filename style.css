@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+body{
+    background-color: rgb(51, 51, 195);
+    background-image:url(./imagens/fundo.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.center{
+    max-width: 1100px;
+    padding: 0 2%;
+    display: flex;
+    margin: 0 auto; 
+    
+}
+
+.login{
+    margin-left: 30%;
+    margin-top: 100px;
+    height: 400px;
+    width: 480px;
+    border-radius: 15px;   
+    border: 1px solid black;
+    background-color: white;
+
+    
+}
+
+input{
+    height: 50px;
+    width: 370px;
+    margin-top: 16px;
+    margin-left: 45px;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 2px solid black;
+    padding-left: 15px;
+    font-size: 15px;
+}
+
+
+
+.botao{
+    height: 50px;
+    width: 165px;
+    border-radius: 4px;
+    border: 0;  
+    margin-top: 15px;
+    background-color: rgb(67, 101, 210);
+    color: aliceblue;
+    font-size: 15px;
+    font-style: bold;
+}
+
+.botaoLogin{
+    text-align: center;
+}
+
+.botaoCadastro{
+    text-align: center;
+    
+}
+h1{
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a{
+    margin-left: 170px;
+}
+
+.botao:hover{
+    background-color: rgb(92, 119, 208);
+    transition: 0.5s;
+}
+
+
+.fa-eye{
+   cursor: pointer;
+}
+
+#msgSucesso{
+    margin-left:62px;
+    color: #00bb00;
+    background-color: #bbffbe;
+    width: 350px;
+    height: 45px;
+    border-radius: 4px;
+    display: none;
+    text-align: center;
+    padding-top: 10px;
+   
+}
+
+#msgErro{
+    margin-left:62px; 
+    color: #ff0000;
+    background-color: #ffbbbb;
+    width: 350px;
+    height: 45px;
+    border-radius: 4px;
+    display: none;
+    text-align: center;
+    padding-top: 5px;
+    
+}
