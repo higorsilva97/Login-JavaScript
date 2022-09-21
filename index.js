@@ -154,12 +154,31 @@ function Entrar(){
         i = obj.length;
         let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
         console.log(token);
+        let UsuarioValid = {
+            usuario : '',
+            senha : '',
+            email : ''
+        }
+        let listaUser = JSON.parse(localStorage.getItem('listaUser'));
+        listaUser.forEach((item) =>{ //varrer a lista
+            if(usuario.value === item.usuarioCad && senha.value === item.senhaCad){
+                UsuarioValid = {
+                    usuario: item.usuarioCad,
+                    senha: item.senhaCad,
+                    email: item.emailCad
+                }
+                localStorage.setItem('usuarioLogado', UsuarioValid.usuario);
+                localStorage.setItem('token', token);
+
+            }
+              
+        
+        })
        // window.location.href = 'http://127.0.0.1:5500/CRUD-JavaScript/bem-vindo.html';
        // document.location.reload(true);
-      
-       window.location.href = 'http://127.0.0.1:5500/CRUD-JavaScript/bemvindo.html';
        
-      
+         window.location.href = 'http://127.0.0.1:5500/bemvindo.html';
+
     }else{  
         i++;
         msgErro.setAttribute('style', 'display: block');
@@ -190,6 +209,7 @@ function Entrar(){
     })
 
     */   
+
 }
 
 function Excluir(){

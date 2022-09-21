@@ -6,15 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
-    <h1>BEM VINDO</h1>
+    
 </head>
 <body>
-    
+    <div id="divBemVindo">
+        <h1 id="bemVindo"></h1>
+        <input class="botao" type="submit" value="Sair" style="margin-left: 30%;">
+    </div>
+
+
+    <script>
+        let usuario = localStorage.getItem('usuarioLogado')
+        let token = localStorage.getItem('token');
+        console.log(token);
+        document.getElementById('bemVindo').innerHTML = 'Bem vindo, '+usuario;
+    </script>
 </body>
-<script>  
 
-
-
-
-</script>
 </html>
