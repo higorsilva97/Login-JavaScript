@@ -110,6 +110,16 @@ a{
     border-radius: 4px;
     display: none;
     text-align: center;
-    padding-top: 5px;
+    padding-top: 10px;
     
+}
+
+#bemvindo{
+    margin-left: 30%;
+    margin-top: 100px;
+    height: 400px;
+    width: 480px;
+    border-radius: 15px;   
+    border: 1px solid black;
+    background-color: white;
 }
