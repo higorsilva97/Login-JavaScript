@@ -129,12 +129,13 @@ function BuscaUsuario(){
         msgSucesso.setAttribute('style', 'display: none');
         msgSucesso.innerHTML = '';
 
-    }
+    }else{
         for(var i =0; i < localStorage.length; i++){
             a = localStorage.getItem(localStorage.key(i));
         }
         obj = JSON.parse(a);
-        console.log(obj);
+        console.log(typeof obj);
+    }
     
 }
 
@@ -168,8 +169,7 @@ function Entrar(){
                     email: item.emailCad
                 }
                 localStorage.setItem('usuarioLogado', UsuarioValid.usuario);
-                localStorage.setItem('token', token);
-
+              //  localStorage.setItem('token', token);
             }
               
         
@@ -178,6 +178,7 @@ function Entrar(){
        // document.location.reload(true);
        
          window.location.href = 'http://127.0.0.1:5500/bemvindo.html';
+         console.log(UsuarioValid.usuario);
 
     }else{  
         i++;

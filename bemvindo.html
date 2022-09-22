@@ -11,15 +11,15 @@
 <body>
     <div id="divBemVindo">
         <h1 id="bemVindo"></h1>
-        <input class="botao" type="submit" value="Sair" style="margin-left: 30%;">
+       <a style="margin-left:22%;" href="http://127.0.0.1:5500/index.html"><input class="botao" type="submit" value="Sair"></a> 
     </div>
 
 
     <script>
         let usuario = localStorage.getItem('usuarioLogado')
-        let token = localStorage.getItem('token');
-        console.log(token);
-        document.getElementById('bemVindo').innerHTML = 'Bem vindo, '+usuario;
+        document.getElementById('bemVindo').innerHTML = 'Bem-vindo, '+usuario;
+        console.log(usuario);
+        
     </script>
 </body>
 
