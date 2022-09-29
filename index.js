@@ -18,6 +18,7 @@ let divCadastro = document.querySelector('#divCadastro');
     divCadastro.style.display = 'none';
 let tamanhoDivLogin = document.getElementById('login');   
 let botaoLogin = document.querySelector('.botaoLogin');
+let botaoCad = document.querySelector('#botaoCad');
 
 usuario.addEventListener('keyup', () => {
     if (usuario.value.length <= 2){
@@ -41,15 +42,22 @@ senha.addEventListener('keyup', () => {
 
 })
 
+
 confirmaSenha.addEventListener('keyup', () => {
-    if (senha.value !== confirmaSenha.value){
-        confirmaSenha.setAttribute('style', 'color:red');
-        validConfirmaSenha = false;
+    if (confirmaSenha.value !== senha.value ){
+        confirmaSenha.setAttribute('style', 'color:red');   
     }else
-        confirmaSenha.setAttribute('style', 'color:gren');
+        confirmaSenha.setAttribute('style', 'color:green');
+
+    if (confirmaSenha.value !== senha.value ){
+        validConfirmaSenha = false;
+        console.log('dif');
+    }
+    else
         validConfirmaSenha = true;
-        //TA QUBRADO
+        console.log('igual');
 })
+
 
 email.addEventListener('keyup', () => {
     if (email.value.length <= 2){
@@ -74,11 +82,9 @@ function voltarLogin(){
         botaoLogin.style.display = 'block';  
 }
 
-
-
-
 function Cadastrar()
 {
+ 
     
     if(validUsuario && validSenha && validConfirmaSenha && validEmail)
     {
@@ -115,6 +121,7 @@ function Cadastrar()
             }
         
 }    
+
 
 //BANCO DE DADOS DO BROWSER 
 var db = openDatabase('Teste3', '2.0', 'Mybase', 4048);
@@ -173,10 +180,7 @@ function Entrar(){
             }
               
         
-        })
-       // window.location.href = 'http://127.0.0.1:5500/CRUD-JavaScript/bem-vindo.html';
-       // document.location.reload(true);
-       
+        })      
          window.location.href = 'http://127.0.0.1:5500/bemvindo.html';
          console.log(UsuarioValid.usuario);
 
@@ -188,30 +192,22 @@ function Entrar(){
         msgSucesso.innerHTML = '';
         }
       }   
-
-      /*
-    let UsuarioValid = {
-        usuario : '',
-        senha : '',
-        email : ''
-    }
-    let listaUser = JSON.parse(localStorage.getItem('listaUser'));
-    listaUser.forEach((item) =>{ //varrer a lista
-        if(usuario.value === item.usuarioCad && senha.value === item.senhaCad){
-            UsuarioValid = {
-                usuario: item.usuarioCad,
-                senha: item.senhaCad,
-                email: item.emailCad
-            }
-            console.log(UsuarioValid);
-        }
-          
-    
-    })
-
-    */   
-
 }
+
+email.addEventListener('keyup', function(e){
+    if(e.code === 'Enter'){
+        const btn = document.querySelector('#botaoCad');
+        btn.click();
+        
+    }
+});
+
+senha.addEventListener('keyup', function(e){
+    if(e.code ==='Enter'){
+        const btn = document.querySelector('#btnEntrar');
+        btn.click();
+    }
+})
 
 function Excluir(){
 

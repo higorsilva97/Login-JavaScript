@@ -19,13 +19,13 @@ body{
     padding: 0 2%;
     display: flex;
     margin: 0 auto; 
+    justify-content:center;
     
 }
 
 .login{
-    margin-left: 25%;
-    margin-top: 100px;
-    height: 400px;
+    margin-top: 200px;
+    height: 440px;
     width: 480px;
     border-radius: 15px;   
     border: 1px solid black;
@@ -110,8 +110,13 @@ a{
     border-radius: 4px;
     display: none;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 5px;
     
+}
+
+#bodyBemVindo{
+    display: flex;
+    justify-content: center;
 }
 
 #bemvindo{
@@ -125,12 +130,63 @@ a{
 }
 
 #divBemVindo{
-    margin-left: 35%;
+    
     margin-top: 100px;
     height: 400px;
     width: 480px;
     border-radius: 15px;   
     border: 1px solid black;
     background-color: white;
+    
+}
+  /* 1200 e + = telas maiores, tvs */
+@media (max-width: 1200px) {
+   body{
+    background-repeat: repeat;
+   }
 }
 
+  /* 1024px - 1200px = desktop */
+@media (max-width: 1024px) {
+    .login{
+       margin-top: 250px;    
+    }
+}
+
+ /* 768px - 1024px = telas menores, laptops */
+ @media (max-width: 768px) {
+    .login{
+        margin-top: 200px;
+    }
+}
+
+/* 480px - 768px = tablet */
+@media (max-width: 480px) {
+    input{
+        height: 50px;
+        width: 300px;
+        margin-left: 10%; 
+    }
+
+    #msgErro{
+        margin-left:7%; 
+        width: 300px;
+        padding-top: 5px;
+        font-size: 15px; 
+    }
+    #msgSucesso{
+        margin-left:7%; 
+        width: 300px;
+        padding-top: 5px;
+        font-size: 15px; 
+       
+    }
+    
+}
+  
+ 
+  
+
+  
+
+ 
