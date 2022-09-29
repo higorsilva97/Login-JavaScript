@@ -21,8 +21,8 @@ let botaoLogin = document.querySelector('.botaoLogin');
 let botaoCad = document.querySelector('#botaoCad');
 
 usuario.addEventListener('keyup', () => {
-    if (usuario.value.length <= 2){
-        usuario.setAttribute('style', 'color:red'); //validação se o usuario ja tiver cadastrado????? ideia pra fazer
+    if (usuario.value.length <= 5){
+        usuario.setAttribute('style', 'color:red'); 
         validUsuario = false;
     }else{
         usuario.setAttribute('style', 'color:green');
@@ -32,7 +32,7 @@ usuario.addEventListener('keyup', () => {
 })
 
 senha.addEventListener('keyup', () => {
-    if (senha.value.length <= 3){
+    if (senha.value.length <= 6){
         senha.setAttribute('style', 'color:red');
         validSenha = false;
     }else{
@@ -51,16 +51,14 @@ confirmaSenha.addEventListener('keyup', () => {
 
     if (confirmaSenha.value !== senha.value ){
         validConfirmaSenha = false;
-        console.log('dif');
     }
     else
         validConfirmaSenha = true;
-        console.log('igual');
 })
 
 
 email.addEventListener('keyup', () => {
-    if (email.value.length <= 2){
+    if (email.value.length <= 7){
         email.setAttribute('style', 'color:red');
         validEmail = false;
     }else{
@@ -107,27 +105,18 @@ function Cadastrar()
                 msgSucesso.innerHTML = '<strong> Cadastrado com sucesso!  </strong>';
                 msgErro.setAttribute('style', 'display: none');
                 msgErro.innerHTML = '';
-                console.log('bom');
+                
                    
     }else {
             msgErro.setAttribute('style', 'display: block');
             msgErro.innerHTML = '<strong> Preencha todos os campos corretamente! </strong>';
-            console.log(usuario.value, senha.value, confirmaSenha.value, email.value);
-            console.log(validUsuario, validSenha,validConfirmaSenha, validEmail)
             msgSucesso.setAttribute('style', 'display: none');
             msgSucesso.innerHTML = '';
-            console.log('ruim');
+        
 
             }
         
 }    
-
-
-//BANCO DE DADOS DO BROWSER 
-var db = openDatabase('Teste3', '2.0', 'Mybase', 4048);
-db.transaction(function(criar){
-    criar.executeSql("CREATE TABLE users (id INTEGER PRIMARY KEY, usuario TEXT, senha TEXT, email TEXT)");
-});
 
 function BuscaUsuario(){
     if(localStorage.length === 0){
@@ -207,15 +196,11 @@ senha.addEventListener('keyup', function(e){
         const btn = document.querySelector('#btnEntrar');
         btn.click();
     }
-})
+});
 
-function Excluir(){
 
-}
 
-function Alterar(){
 
-}
 
 
 
